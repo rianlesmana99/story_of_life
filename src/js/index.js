@@ -61,18 +61,19 @@ const data = [
 ];
 
 data.forEach((data) => {
-    const book_card_content = document.querySelector(".book-group");
+    const book_card_content = document.createElement("section");
+    book_card_content.className = "book-group";
     book_card_content.innerHTML = `<img src="${data.img}" alt="main-reader">
                     <div class="price-group">
                         <p>${data.title}</p>
-                        <p>Catogory:<br>${data.category}</p>
+                        <p>Catogory: ${data.category}</p>
                         <p>${data.price}</p>
                         <div class="link-group">
                             <a href="${data.tokped}" target="_blank">Tokopedia</a>
                             <a href="${data.shpee}" target="_blank">Shopee</a>
                             <a href="${data.gramedia}" target="_blank">Gramedia</a>
                         </div>
-                        <button id="btn-price" onclick="alert('Success to buy ${data.title}')">Buy</button>
+                        <button id="btn-price" onclick="alert('Successfully purchased book ${data.title} for ${data.price}')">Buy</button>
                     </div>`;
     book_card.appendChild(book_card_content);
 });
