@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
 :root {
-    --dark-green: #162A2C;
+    --dark-green: #162a2c;
     --gray: #686867;
-    --green: #5E6C58;
-    --sky: #D6E0E2;
-    --cream: #F4EFE6;
-    --light: #FEFCF6;
+    --green: #5e6c58;
+    --sky: #d6e0e2;
+    --cream: #f4efe6;
+    --light: #fefcf6;
 }
 
 * {
@@ -16,9 +16,10 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     font-size: 16px;
-    font-family: 'Roboto', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: "Roboto", "Segoe UI", Tahoma, Verdana, sans-serif;
     font-weight: 400;
     background-color: var(--cream);
     color: var(--dark-green);
@@ -35,7 +36,8 @@ a {
     text-decoration: none;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
 }
 
@@ -55,7 +57,7 @@ ul, li {
     font-size: 1.5rem;
     font-weight: bolder;
     color: #3c4590;
-    font-family: 'Josefin Sans';
+    font-family: "Josefin Sans";
 }
 
 .main-nav-btn {
@@ -67,7 +69,7 @@ ul, li {
 .main-nav-menu {
     position: absolute;
     top: 0;
-    background-color: #2D336B;
+    background-color: #2d336b;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -87,7 +89,7 @@ ul, li {
     text-align: center;
     font-size: 1.3rem;
     font-weight: bold;
-    color: #FFF2F2;
+    color: #fff2f2;
     transition: all 0.1s;
 }
 
@@ -104,7 +106,7 @@ ul, li {
     background-color: #3c4590;
     display: inline-block;
     padding: 1rem;
-    color: #FFF2F2;
+    color: #fff2f2;
     font-weight: 600;
     font-size: 2rem;
     width: 4.3rem;
@@ -126,7 +128,7 @@ ul, li {
     font-weight: 800;
     color: var(--light);
     font-size: 2.5rem;
-    font-family: 'Josefin Sans';
+    font-family: "Josefin Sans";
     margin-bottom: 0.5rem;
 }
 
@@ -137,7 +139,7 @@ ul, li {
 }
 
 .main-banner a {
-    background-color: #2D336B;
+    background-color: #2d336b;
     color: var(--light);
     padding: 0.5rem 1.5rem;
     display: inline-block;
@@ -186,13 +188,13 @@ ul, li {
 }
 
 .div-category {
-    background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);
+    background: linear-gradient(90deg, #fdbb2d 0%, #22c1c3 100%);
     padding: 1rem;
     border-radius: 0.5rem;
     width: 13rem;
     text-align: left;
     transition: all 0.3s;
-    box-shadow: 1px 1px 5px #5E6C58;
+    box-shadow: 1px 1px 5px #5e6c58;
 }
 
 .div-category:hover {
@@ -396,7 +398,7 @@ ul, li {
     background-color: #3c4590;
     font-weight: 600;
     font-family: "Roboto";
-    color: #FFF2F2;
+    color: #fff2f2;
     transition: all 0.3s;
 }
 
@@ -414,10 +416,60 @@ ul, li {
     padding-bottom: 5px;
     color: #fff;
     font-weight: bold;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-size: 1rem;
 }
 
+.main-game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-box {
+    background-color: white;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+#user-choice {
+    width: 100%;
+    border-radius: 4px;
+    padding: 5px 3px;
+}
+
+#btn-start {
+    width: 100%;
+    border-radius: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    box-shadow: 1px 1px 3px gray;
+    background-color: #2d336b;
+    color: white;
+    font-weight: bold;
+}
+
+.game-img {
+    display: flex;
+    gap: 1rem;
+}
+
+.green {
+    color: darkgreen;
+}
+
+.red {
+    color: red;
+}
 
 @media (min-width: 768px) {
     .main-nav-menu {
@@ -449,7 +501,7 @@ ul, li {
     }
 
     .main-nav-menu a {
-        color: #162A2C;
+        color: #162a2c;
         border-radius: 0;
         padding: 1rem 1.5rem;
         width: auto;

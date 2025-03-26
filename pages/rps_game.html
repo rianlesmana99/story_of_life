@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RPS - Side Game</title>
+        <link rel="stylesheet" href="../src/css/styles.css" />
+        <script
+            src="https://kit.fontawesome.com/fa65046c58.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <header>
+            <nav class="main-nav">
+                <div class="main-nav-brand">
+                    <a href="/index.html">Story of Life</a>
+                </div>
+                <ul class="main-nav-menu" id="main-menu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a class="active" href="#">Game</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                    <div class="menu-btn" id="close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </ul>
+                <div class="main-nav-btn" id="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+        <main class="main-game-container">
+            <section class="main-box">
+                <p>Score: <span id="score">0</span></p>
+                <div class="game-img">
+                    <figure>
+                        <figcaption>You</figcaption>
+                        <img id="user-img" src="/src/img/rock.jpg" alt="rock" />
+                    </figure>
+                    <figure>
+                        <figcaption>Computer</figcaption>
+                        <img
+                            id="computer-img"
+                            src="/src/img/rock.jpg"
+                            alt="rock"
+                        />
+                    </figure>
+                </div>
+
+                <h3 id="label">RPS Game!</h3>
+                <select id="user-choice">
+                    <option value="1">Rock</option>
+                    <option value="2">Paper</option>
+                    <option value="3">Scissors</option>
+                </select>
+                <button id="btn-start">Start Game!</button>
+            </section>
+        </main>
+
+        <script>
+            const btn_start = document.getElementById("btn-start");
+            const user_img = document.getElementById("user-img");
+            const com_img = document.getElementById("computer-img");
+            const user_choice = document.getElementById("user-choice");
+            const score = document.getElementById("score");
+            const label = document.getElementById("label");
+            const menu_btn = document.getElementById("menu-btn");
+            const main_menu = document.getElementById("main-menu");
+            const close_menu = document.getElementById("close");
+            let count = 0;
+
+            menu_btn.addEventListener("click", () => {
+                main_menu.style.right = "0rem";
+            });
+
+            close_menu.addEventListener("click", () => {
+                main_menu.style.right = "-65rem";
+            });
+
+            btn_start.addEventListener("click", (e) => {
+                let comp = Math.floor(Math.random() * 3) + 1;
+
+                if (parseInt(user_choice.value) === 1) {
+                    user_img.src = "/src/img/rock.jpg";
+                } else if (parseInt(user_choice.value) === 2) {
+                    user_img.src = "/src/img/paper.jpg";
+                } else {
+                    user_img.src = "/src/img/scissors.jpg";
+                }
+
+                if (comp === 1) {
+                    com_img.src = "/src/img/rock.jpg";
+                } else if (comp === 2) {
+                    com_img.src = "/src/img/paper.jpg";
+                } else {
+                    com_img.src = "/src/img/scissors.jpg";
+                }
+
+                if (parseInt(user_choice.value) === comp) {
+                    label.innerText = "Draw Game!";
+                } else if (parseInt(user_choice.value) === 1 && comp === 3) {
+                    label.innerText = "You Win!";
+                    count++;
+                } else if (parseInt(user_choice.value) === 2 && comp === 1) {
+                    label.innerText = "You Win!";
+                    count++;
+                } else if (parseInt(user_choice.value) === 3 && comp === 2) {
+                    label.innerText = "You Win!";
+                    count++;
+                } else {
+                    label.innerText = "You Lose!";
+                    if (count != 0) {
+                        count--;
+                    }
+                }
+                score.innerText = count;
+            });
+        </script>
+    </body>
+</html>
