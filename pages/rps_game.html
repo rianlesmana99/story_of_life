@@ -39,13 +39,13 @@
                 <div class="game-img">
                     <figure>
                         <figcaption>You</figcaption>
-                        <img id="user-img" src="/src/img/rock.jpg" alt="rock" />
+                        <img id="user-img" src="../src/img/rock.jpg" alt="rock" />
                     </figure>
                     <figure>
                         <figcaption>Computer</figcaption>
                         <img
                             id="computer-img"
-                            src="/src/img/rock.jpg"
+                            src="../src/img/rock.jpg"
                             alt="rock"
                         />
                     </figure>
@@ -85,19 +85,19 @@
                 let comp = Math.floor(Math.random() * 3) + 1;
 
                 if (parseInt(user_choice.value) === 1) {
-                    user_img.src = "/src/img/rock.jpg";
+                    user_img.src = "../src/img/rock.jpg";
                 } else if (parseInt(user_choice.value) === 2) {
-                    user_img.src = "/src/img/paper.jpg";
+                    user_img.src = "../src/img/paper.jpg";
                 } else {
-                    user_img.src = "/src/img/scissors.jpg";
+                    user_img.src = "../src/img/scissors.jpg";
                 }
 
                 if (comp === 1) {
-                    com_img.src = "/src/img/rock.jpg";
+                    com_img.src = "../src/img/rock.jpg";
                 } else if (comp === 2) {
-                    com_img.src = "/src/img/paper.jpg";
+                    com_img.src = "../src/img/paper.jpg";
                 } else {
-                    com_img.src = "/src/img/scissors.jpg";
+                    com_img.src = "../src/img/scissors.jpg";
                 }
 
                 if (parseInt(user_choice.value) === comp) {
