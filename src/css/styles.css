@@ -471,6 +471,71 @@ li {
     color: red;
 }
 
+#input-number {
+    background-color: #00a01b;
+    padding: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px var(--gray);
+    display: flex;
+    gap: 0.5rem;
+    transition: 100ms all ease-in-out;
+}
+
+#input-number:hover {
+    transform: scale(1.1);
+}
+
+#input-number input {
+    padding: 0.3rem;
+    border-radius: 0.25rem;
+    border: solid 1px var(--gray);
+    font-family: "Roboto", "Segoe UI", Tahoma, Verdana, sans-serif;
+    transition: all 100ms;
+}
+
+#input-number input:focus {
+    outline: solid 4px #00a2ff88;
+}
+
+#input-number button {
+    background-color: #f16e03;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    color: var(--light);
+    font-family: "Roboto", "Segoe UI", Tahoma, Verdana, sans-serif;
+}
+
+.main-multiplication {
+    background-color: var(--light);
+    max-width: 45vw;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px var(--gray);
+    transition: all 300ms;
+}
+
+table, tr, td {
+    border: solid 1px #000;
+    border-collapse: collapse;
+}
+
+#table-number {
+    text-align: center;
+    transition: all 300ms;
+}
+
+#table-number td {
+    padding: 1rem;
+}
+
 @media (min-width: 768px) {
     .main-nav-menu {
         width: 25rem;

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Index</title>
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <script src="https://kit.fontawesome.com/fa65046c58.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/css/register.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="main-nav-brand">
+                <a href="/index.html">Story of Life</a>
+            </div>
+            <ul class="main-nav-menu" id="main-menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">About</a></li>
+                <li>
+                    <a href="./../pages/login.html">Login</a>
+                </li>
+                <li>
+                    <a class="active" href="./pages/register.html">Register</a>
+                </li>
+                <div class="menu-btn" id="close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </ul>
+            <div class="main-nav-btn" id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-register">
+        <form id="register" class="main-card-register">
+            <h1>Register</h1>
+            <div class="input-group-register">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username">
+            </div>
+            <div class="input-group-register">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter full name">
+            </div>
+            <div class="input-group-register">
+                <div class="input-radio-group">
+                    <input type="radio" value="male" name="gender">
+                    <label for="gender">Male</label>
+                </div>
+                <div class="input-radio-group">
+                    <input type="radio" value="female" name="gender">
+                    <label for="gender">Female</label>
+                </div>
+            </div>
+            <div class="input-group-register">
+                <div class="input-check-group">
+                    <input type="checkbox" name="online_class" id="online_class">
+                    <label for="gender">Do you want to join online?</label>
+                </div>
+            </div>
+            <div class="input-group-register">
+                <label for="class">Class</label>
+                <select id="class" name="class">
+                    <option>-</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="c++">C++</option>
+                    <option value="javascripts">JavaScripts</option>
+                    <option value="nodejs">NodeJs</option>
+                </select>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <article class="data-user-section">
+            <h1>List User</h1>
+            <div id="register-user-list">
+                <div class="empty-message">There is currently no data available</div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        const menu_btn = document.getElementById("menu-btn");
+        const main_menu = document.getElementById("main-menu");
+        const close_menu = document.getElementById("close");
+        const form_register = document.getElementById("register");
+        const table_data = document.getElementById("register-user-list")
+        let data = {};
+        const list_data = [];
+        // Navbar
+        menu_btn.addEventListener("click", () => {
+            main_menu.style.right = "0rem";
+        });
+
+        close_menu.addEventListener("click", () => {
+            main_menu.style.right = "-65rem";
+        });
+
+
+        form_register.addEventListener("change", (e)=> {
+            data = {
+                ...data,
+                // [e.target.name]: e.target.value,
+                [e.target.name]: e.target.name !== "online_class" ? e.target.value : e.target.checked,
+            }
+        });
+
+        form_register.addEventListener("submit", (e) => {
+            e.preventDefault();
+            list_data.push(data);
+            console.log(list_data)
+            table_data.innerHTML = "";
+
+            list_data.forEach((data) => {
+                const new_div = document.createElement("div")
+                new_div.className = "register-card-data"
+                new_div.innerHTML = `
+                    <table>
+                        <tr>
+                            <td>Username</td>
+                            <td>:</td>
+                            <td>${data.username}</td>
+                        </tr>
+                        <tr>
+                            <td>Full Name</td>
+                            <td>:</td>
+                            <td>${data.fullname}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>:</td>
+                            <td>${data.gender}</td>
+                        </tr>
+                        <tr>
+                            <td>Online Class</td>
+                            <td>:</td>
+                            <td>${data.online_class ? "Yes" : "No"}</td>
+                        </tr>
+                        <tr>
+                            <td>Class</td>
+                            <td>:</td>
+                            <td>${data.class}</td>
+                        </tr>
+                    </table>
+                `;
+            
+                table_data.appendChild(new_div)
+            });
+        })
+    </script>
+</body>
+</html>

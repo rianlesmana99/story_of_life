@@ -1,0 +1,112 @@
+.main-register {
+    height: 100vh;
+    width: 100vw;
+    margin-top: 10rem;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.main-card-register {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 8px;
+    width: 25rem;
+}
+
+.main-card-register h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size:1.5rem;
+}
+
+.input-group-register {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.main-card-register button {
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #3c4590;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px gray;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.input-group-register input {
+    padding: 5px;
+    border-radius: 4px;
+    border: solid 1px gray;
+    transition: all 100ms ease-in-out;
+}
+
+.input-group-register input:focus {
+    outline: solid 3px #3c449073;
+}
+
+.input-group-register select {
+    padding: 5px;
+    border-radius: 4px;
+    border: solid 1px gray;
+    transition: all 100ms ease-in-out;
+}
+
+.input-group-register select:focus {
+    outline: solid 3px #3c449073;
+}
+
+.data-user-section {
+    background-color: #fff;
+    box-shadow: 1px 1px 3px gray;
+    padding: 1rem;
+    min-width: 25rem;
+    max-width: 55rem;
+    border-radius: 8px;
+}
+
+.data-user-section h1 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.register-card-data table, .register-card-data tr, .register-card-data td {
+    border: none;
+    border-collapse: separate;
+}
+
+.register-card-data table {
+    background-color: #3c4590;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px gray;
+}
+
+.register-card-data td {
+    padding: 5px;
+}
+
+.empty-message {
+    text-align: center;
+    color: gray;
+}
+
+#register-user-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
